@@ -32,7 +32,7 @@ fun <T> MutablePreferences.setEnum(preference: T) where T : Enum<*>, T : EnumPre
  * Writes the new values of many [EnumPreference] to [MutablePreferences].
  * For use inside [DataStore.edit] or [DataStore.updateData]
  */
-fun MutablePreferences.setAllEnums(vararg preferences: EnumPreference) {
+fun MutablePreferences.setEnums(vararg preferences: EnumPreference) {
     for (pref in preferences) {
         if (pref is Enum<*>) setEnum(pref)
     }
@@ -75,6 +75,6 @@ suspend fun <T> DataStore<Preferences>.setEnum(preference: T) where T : Enum<T>,
  * @param preferences The values to write.
  * @throws [IOException] when an exception is encountered when writing data to disk.
  */
-suspend fun DataStore<Preferences>.setAllEnums(vararg preferences: EnumPreference) {
-    edit { it.setAllEnums(*preferences) }
+suspend fun DataStore<Preferences>.setEnums(vararg preferences: EnumPreference) {
+    edit { it.setEnums(*preferences) }
 }

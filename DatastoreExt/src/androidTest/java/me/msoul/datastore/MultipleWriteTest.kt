@@ -23,9 +23,9 @@ class MultipleWriteTest {
     @Test
     fun test() = runBlocking {
         val expectedLanguage = Language.TURKISH
-        val expectedDarkMode = DarkMode.ENABLED
+        val expectedDarkMode = defaultOf<DarkMode>()
 
-        dataStore.setAllEnums(expectedDarkMode, expectedLanguage, LanguageWithoutDefault.GREEK)
+        dataStore.setEnums(expectedDarkMode, expectedLanguage, LanguageWithoutDefault.GREEK)
 
         val actualLanguage = dataStore.getEnum<Language>().first()
         val actualLanguage2 = dataStore.getEnum<LanguageWithoutDefault>().first()
