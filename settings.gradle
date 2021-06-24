@@ -1,0 +1,3 @@
+include ':DatastoreExt'
+include ':app'
+rootProject.name = "DatastoreExt Sample"
