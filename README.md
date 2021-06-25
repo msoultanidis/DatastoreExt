@@ -16,7 +16,7 @@ allprojects {
 ### Step 2. Add the dependency
 ```
 dependencies {
-    implementation 'me.msoul:datastoreext:0.1.0'
+    implementation 'me.msoul:datastoreext:1.0.0'
 }
 ```
 
@@ -75,9 +75,9 @@ dataStore.getEnum<Language>().collect {
     textView.text = "The country code of the preferred language is [${it.countryCode}]"
 }
 
-// Or you can do the following if you want retrieve multiple preferences from the same flow
+// Or you can do the following if you want to retrieve multiple preferences from the same flow
 dataStore.data.map { preferences ->
-    return AppPreferences( // Some data class
+    AppPreferences( // Some data class
         preferences[SOME_KEY],
         preferences[OTHER_KEY],
         preferences.getEnum<Language>(),

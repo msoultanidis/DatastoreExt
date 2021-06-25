@@ -34,7 +34,5 @@ class MultipleWriteTest {
         assertTrue("Language without default was not set properly", actualLanguage2 == LanguageWithoutDefault.GREEK)
         assertTrue("Language was not set properly", actualLanguage == expectedLanguage)
         assertTrue("DarkMode was not set properly", actualDarkMode == expectedDarkMode)
-
-        assertTrue(true)
     }
 }
